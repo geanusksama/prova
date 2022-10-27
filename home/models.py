@@ -9,11 +9,12 @@ class Cidade(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Detalhes(models.Model):
     detalhe = nome = models.ForeignKey(Cidade, on_delete=models.DO_NOTHING)
     nome = models.CharField(max_length=50)
     nullable = models.BooleanField(default=True)
-    dataFundacao = models.DateTimeField(auto_add=True)
+    dataFundacao = models.DateTimeField(auto_now=True)
     populacaoEstimada = models.IntegerField()
     altitude = models.IntegerField()
     idh = models.DecimalField(decimal_places=1, max_digits=10)
